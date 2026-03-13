@@ -2,7 +2,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=perl-io-socket-ssl
 pkgver=2.093
-pkgrel=0
+pkgrel=${pkgrel:-0}
 #_pkgreal is used by apkbuild-cpan to find modules at MetaCpan
 _pkgreal=IO-Socket-SSL
 pkgdesc="Nearly transparent SSL encapsulation for IO::Socket::INET"
@@ -39,6 +39,7 @@ doc() {
     default_doc
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 3b096bea9840c2d5088470d6503d912202a4d4ac7e92981f4592e9ad5c9f8077e827ded4aea113c0994a04a56de505f0e73037394dca79885c7460cafce8873f  IO-Socket-SSL-2.093.tar.gz
 "
